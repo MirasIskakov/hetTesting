@@ -53,13 +53,34 @@ class ViewController: UIViewController {
             view2.heightAnchor.constraint(equalToConstant: 300),
             
             view3.bottomAnchor.constraint(equalTo: view2.bottomAnchor, constant: -50),
-            view3.trailingAnchor.constraint(equalTo: view2.trailingAnchor, constant: -50),
-            view3.leadingAnchor.constraint(equalTo: view2.leadingAnchor, constant: 50),
+            view3.trailingAnchor.constraint(equalTo: view2.trailingAnchor, constant: 50),
+            view3.leadingAnchor.constraint(equalTo: view2.leadingAnchor, constant: -50),
             view3.heightAnchor.constraint(equalToConstant: 150)
         ])
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTouched(tapGestureRecognizer:))))
+        view1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(view1Touched(tapGestureRecognizer:))))
+        view2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(view2Touched(tapGestureRecognizer:))))
+        view3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(view3Touched(tapGestureRecognizer:))))
+        view4.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(view4Touched(tapGestureRecognizer:))))
     }
 
-
+    @objc func viewTouched(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("SuperView touched")
+    }
+    @objc func view1Touched(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("blue touched")
+    }
+    @objc func view2Touched(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("white touched")
+    }
+    @objc func view3Touched(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("black touched")
+    }
+    @objc func view4Touched(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("orange touched")
+    }
+    
+    
 }
 
